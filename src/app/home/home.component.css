@@ -1,0 +1,417 @@
+.main {
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+
+}
+
+
+.outerbox {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.nav-bar {
+    display: contents;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #f5f4ee;
+}
+
+@media screen and (max-width: 1370px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+}
+
+@media screen and (max-width: 1540px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+}
+
+.dropdown {
+    width: 15px;
+    height: 25px;
+    margin-left: 9px;
+}
+
+.recent {
+    height: 38px;
+    width: 150px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+    margin-left: 70px;
+    cursor: pointer;
+}
+
+.tab-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.recentsearch {
+    margin: 0%;
+}
+
+.search {
+    height: 38px;
+    width: 550px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.searchimg {
+    margin-left: 15px;
+    height: 30px;
+    width: 25px;
+}
+
+.search2 {
+    outline: none;
+    padding-left: 10px;
+    width: 500px;
+}
+
+/* for add new customer*/
+
+.addnew {
+    margin-left: 20vh;
+}
+
+#add-new-service {
+    cursor: pointer;
+    height: 5vh;
+    width: 25vh;
+    box-shadow: 3px 3px 5px 0px rgba(0.2, 0, 0, 0.2),
+        -3px -3px 5px 0px rgba(0.2, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: rgba(33, 36, 39, 0.95);
+}
+
+#add-new-label {
+    margin-top: 1px;
+    font-weight: 400;
+    font-size: medium;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    /* This will center the text vertically */
+    justify-content: center;
+}
+
+#new-customer {
+    margin-top: 2vh;
+    cursor: pointer;
+    height: 5.5vh;
+    width: 33.7vh;
+    box-shadow: 3px 3px 5px 0px rgba(0.2, 0, 0, 0.2),
+        -3px -3px 5px 0px rgba(0.2, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: rgba(33, 36, 39, 0.95);
+}
+
+#new-customer-label {
+    margin-top: 1px;
+    font-weight: 400;
+    font-size: medium;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    /* This will center the text vertically */
+    justify-content: center;
+}
+
+.main {
+    height: 100%;
+    display: flex;
+}
+
+.card-list {
+    margin-top: 3vh;
+    height: 79vh;
+    width: 23vw;
+
+    padding-bottom: 3vh;
+    overflow: scroll;
+}
+
+.card-container {
+    padding: 2vh 2.5vh 0 10vh;
+}
+
+.card {
+    /* box-sizing: border-box;
+    */
+    padding-left: 1vw;
+    padding-top: 0.8vh;
+    box-shadow: 3px 3px 5px 0px rgba(0.2, 0, 0, 0.2),
+        -3px -3px 5px 0px rgba(0.2, 0, 0, 0.2);
+    background-color: #f5f4ee;
+    cursor: pointer;
+}
+
+.card.selected {
+    background-color: rgba(33, 36, 39, 0.1);
+}
+
+.card-content {
+    position: relative;
+    left: -1vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* 
+Details: 
+   Total aval. width - 59vw
+   Toatal aval. height - 77vh */
+
+.details {
+    flex-grow: 1;
+    padding: 5.1vh 2.5vh 0vh 15vh;
+    display: flex;
+}
+
+.booking-details {
+    width: 36vw;
+    height: 75.5vh;
+    background-color: #212427;
+    border-radius: 5px 0 0 5px;
+    padding: 3vh;
+    overflow: scroll;
+}
+
+.key {
+    padding-left: 20px;
+    width: 50%;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.value {
+    width: 50%;
+    text-align: left;
+    color: white;
+}
+
+/* Service details */
+
+.phone {
+    height: 18px;
+}
+
+.loc {
+    height: 18px;
+}
+
+.number {
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 1370px) {
+    .card-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .booking-details::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-details::-webkit-scrollbar {
+        display: none;
+    }
+
+    .approve-button {
+        line-height: 0.8vh;
+    }
+
+    #drop-down-logo {
+        margin-top: -7px;
+    }
+
+    #head-line {
+        padding-top: 5vh;
+    }
+}
+
+@media screen and (max-width: 1540px) {
+    .card-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .booking-details::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-details::-webkit-scrollbar {
+        display: none;
+    }
+
+    .approve-button {
+        line-height: 1vh;
+    }
+
+    #drop-down-logo {
+        margin-top: -6px;
+    }
+
+    #head-line {
+        padding-top: 3vh;
+    }
+}
+
+.customerheader {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 10;
+    position: relative;
+}
+
+.info {
+    margin-left: 38vh;
+    cursor: pointer;
+}
+
+.dots {
+    background: white;
+    height: 25px;
+    border-radius: 6.7px;
+}
+
+.detailsdiv {
+    margin-top: 3.5vh;
+    margin-left: 43vh;
+    border: 3px solid white;
+    border-radius: 10px;
+    height: 12.5vh;
+    width: 22vh;
+    position: absolute;
+}
+
+.view {
+    background-color: white;
+    margin-top: 14px;
+    margin: 14px 10px 10px 10px;
+    padding-left: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    height: 3.5vh;
+    padding-top: 0.5vh;
+}
+
+.unblock {
+    color: red;
+    width: 12vh;
+    background-color: white;
+    margin: 14px 10px 10px 35px;
+    padding-left: 2.5vh;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.maindetails {
+    z-index: 5;
+    position: relative;
+}
+
+/* new form */
+
+.black-area {
+    width: 36vw;
+    height: 75.5vh;
+    background-color: #212427;
+    border-radius: 5px 0 0 5px;
+    padding: 3vh 3vh 3vh 5vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.addnewcustomer {
+    flex-grow: 1;
+    padding: 5.1vh 2.5vh 0vh 15vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.key {
+    width: 50%;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.value {
+    width: 50%;
+    text-align: left;
+    color: white;
+}
+
+#edit-icon {
+    font-size: large;
+    margin-top: 5px;
+}
+
+.delete-icon {
+    font-size: large;
+    padding-top: 5px;
+}
+
+.cancel-icon {
+    color: white;
+    cursor: pointer;
+}
+
+.edit-box {
+    padding: 15px !important;
+    margin-top: -1vh;
+    padding-left: 50px;
+    margin-left: -5vw;
+    width: 15vw;
+    height: 5vh;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.17);
+    border-radius: 3px;
+}
+
+#submit-button {
+    box-sizing: border-box;
+    width: 100px;
+    height: 40px;
+    background: rgba(215, 239, 125, 0.9);
+    border: 0.65px solid #a2b84e;
+    border-radius: 3px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 11px;
+    /* identical to box height */
+    color: #212427;
+    align-self: center;
+    margin-top: 2vh;
+}
+
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}

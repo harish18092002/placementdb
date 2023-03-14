@@ -1,0 +1,164 @@
+<body class="main">
+    <app-navbar></app-navbar>
+
+    <!-- customer details -->
+
+    <div class="main">
+        <div class="card-list">
+            <div *ngFor="let item of customers ; let i = index" class="card-container">
+                <mat-card class="card" [ngClass]="{ selected: item.selected }" (click)="setSelectedcustomer(item)">
+                    <mat-card-title>{{ item.cardData.Name }} </mat-card-title>
+                    <mat-card-content class="card-content">
+
+                        <img src="../../../assets/Phone 3.svg" class="phone">
+                        <p class="number">{{ item.cardData.no }}</p>
+
+                    </mat-card-content>
+                </mat-card>
+                <mat-card id="new-customer" *ngIf="i === customers.length - 1" (click)="addNewService()">
+                    <mat-card-title id="new-customer-label">ADD NEW CUSTOMER +</mat-card-title>
+                </mat-card>
+            </div><!--*ngIf=" i === customers.length - 1" (click)="addNewService()" -->
+
+        </div>
+
+        <div class="details">
+            <div class="booking-details" *ngIf="!addNew; else addNewForm">
+
+
+                <!--CUSTOMER DETAILS -->
+                <div class="customerheader">
+                    <div style="height: 35%">
+                        <h4 style="color: white">CUSTOMER DETAILS</h4>
+                    </div>
+
+                    <!-- order details section -->
+                    <div class="info" (click)="showdetails= !showdetails">
+                        <img class="dots" src="../../../assets/ellipsis 1.svg" alt="">
+                    </div>
+
+                    <div class="detailsdiv" *ngIf="showdetails">
+                        <p class="view">View order details</p>
+                        <p class="unblock">Unblock</p>
+                    </div>
+
+                </div>
+                <div class="maindetails">
+                    <div style="display: flex; justify-content: space-between; padding: 2% 0 "
+                        *ngFor="let customerDetails of selectedcustomer.customerDetails">
+                        <div class="key">{{ customerDetails.title }}</div>
+                        <div class="value">{{ customerDetails.value }}</div>
+                    </div>
+
+                    <h4 style="color: white">CONTACT INFO</h4>
+                    <div style="display: flex; justify-content: space-between; padding: 2% 0"
+                        *ngFor="let customerDetail of selectedcustomer.contact">
+                        <img src="../../../assets/Phone 2.svg" alt="" class="phone">
+                        <div class="key">{{ customerDetail.title }}</div>
+                        <div class="value">{{ customerDetail.value }}</div>
+                    </div>
+                    <h4 style="color: white">ADDRESSES</h4>
+                    <div style="display: flex; justify-content: space-between; padding: 2% 0"
+                        *ngFor="let customerDetail of selectedcustomer.address">
+                        <img src="../../../assets/Location 1.svg" class="loc">
+                        <div class="key">{{customerDetail.title }}</div>
+                        <div class="value">{{ customerDetail.value }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add new customer section -->
+    <div class="addnewcustomer">
+        <ng-template #addNewForm>
+            <div class="black-area">
+                <form style="
+                                display: flex;
+                                flex-wrap: wrap;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                padding: 2% 0;
+                              " #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+                    <div style="display: flex ; flex-wrap: wrap; margin-bottom: 2.5vh;">
+                        <div style="height: 35%">
+                            <h4 style="color: white">CUSTOMER DETAILS</h4>
+                        </div>
+                        <div style="text-align: right ; margin-left: 35.5vh;">
+                            <mat-icon class="cancel-icon" (click)="cancelAddForm()">clear</mat-icon>
+                        </div>
+
+                    </div>
+
+
+                    <div style="display: flex; margin-bottom: 2.3vh">
+                        <div class="key">Customer name</div>
+                        <div class="value">
+                            <input class="edit-box" type="text" name="name" ngModel />
+                        </div>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 2.3vh">
+                        <div class="key">Store name</div>
+                        <div class="value">
+                            <input class="edit-box" type="text" name="storename" ngModel />
+                        </div>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 2.3vh">
+                        <div class="key">Phone number</div>
+                        <div class="value">
+                            <input class="edit-box" type="text " name="number" ngModel />
+                        </div>
+                    </div>
+
+                    <div style="height: 35% ">
+                        <h4 style="color: white ;">ADDRESS DETAILS</h4>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 2.3vh">
+                        <div class="key">Address line1</div>
+                        <div class="value">
+                            <input class="edit-box" type="text " name="line1" ngModel />
+                        </div>
+                    </div>
+                    <div style="display: flex; margin-bottom: 2.3vh">
+                        <div class="key">Address line2</div>
+                        <div class="value">
+                            <input class="edit-box" type="text " name="line2" ngModel />
+                        </div>
+                    </div>
+                    <div style="display: flex; margin-bottom: 2.3vh">
+                        <div class="key">Address line3</div>
+                        <div class="value">
+                            <input class="edit-box" type="text " name="line3" ngModel />
+                        </div>
+                    </div>
+                    <div style="display: flex; margin-bottom: 2.3vh">
+                        <div class="key">City</div>
+                        <div class="value">
+                            <input class="edit-box" type="text " name="city" ngModel />
+                        </div>
+                    </div>
+                    <div style="display: flex; margin-bottom: 2.3vh">
+                        <div class="key">State</div>
+                        <div class="value">
+                            <input class="edit-box" type="text " name="state" ngModel />
+                        </div>
+                    </div>
+                    <div style="display: flex; margin-bottom: 2.3vh">
+                        <div class="key">Pincode</div>
+                        <div class="value">
+                            <input class="edit-box" type="text " name="pincode" ngModel />
+                        </div>
+                    </div>
+
+
+                    <button id="submit-button" type="submit ">Submit</button>
+                </form>
+            </div>
+        </ng-template>
+
+    </div>
+
+</body>
