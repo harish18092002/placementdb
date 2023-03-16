@@ -10,12 +10,11 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class DetailsComponent {
   addNew = false;
-  editing = false;
+
 
   // this the db for students
   users = [
     {
-      // studentid: `e_` + uuidv4(); 
       selected: true,
       cardData: {
         id: "1",
@@ -23,11 +22,15 @@ export class DetailsComponent {
       },
       studentdetails: [
         {
-          title: 'package',
+          title: 'Comapany',
+          value: 'ABC',
+        },
+        {
+          title: 'Package',
           value: '2000',
         },
         {
-          title: 'location',
+          title: 'Location',
           value: 'chennai'
         }
 
@@ -37,18 +40,22 @@ export class DetailsComponent {
 
     {
       // studentid: `e_` + uuidv4(); 
-      selected: true,
+      selected: false,
       cardData: {
         id: "2",
 
       },
       studentdetails: [
         {
-          title: 'package',
+          title: 'Comapany',
+          value: 'ABC',
+        },
+        {
+          title: 'Package',
           value: '2000',
         },
         {
-          title: 'location',
+          title: 'Location',
           value: 'chennai'
         }
 
@@ -57,19 +64,23 @@ export class DetailsComponent {
     },
     {
       // studentid: `e_` + uuidv4(); 
-      selected: true,
+      selected: false,
       cardData: {
         id: "3",
 
       },
       studentdetails: [
         {
-          title: 'package',
-          value: '2000',
+          title: 'Comapany',
+          value: 'ABC',
         },
         {
-          title: 'location',
-          value: 'chennai'
+          title: 'Package',
+          value: '3000',
+        },
+        {
+          title: 'Location',
+          value: 'Chennai'
         }
 
 
@@ -77,18 +88,22 @@ export class DetailsComponent {
     },
     {
       // studentid: `e_` + uuidv4(); 
-      selected: true,
+      selected: false,
       cardData: {
         id: "4",
 
       },
       studentdetails: [
         {
-          title: 'package',
-          value: '2000',
+          title: 'Comapany',
+          value: 'ABC',
         },
         {
-          title: 'location',
+          title: 'Package',
+          value: '4000',
+        },
+        {
+          title: 'Location',
           value: 'chennai'
         }
 
@@ -97,18 +112,22 @@ export class DetailsComponent {
     },
     {
       // studentid: `e_` + uuidv4(); 
-      selected: true,
+      selected: false,
       cardData: {
         id: "5",
 
       },
       studentdetails: [
         {
-          title: 'package',
-          value: '2000',
+          title: 'Comapany',
+          value: 'ABC',
         },
         {
-          title: 'location',
+          title: 'Package',
+          value: '5000',
+        },
+        {
+          title: 'Location',
           value: 'chennai'
         }
 
@@ -117,18 +136,22 @@ export class DetailsComponent {
     },
     {
       // studentid: `e_` + uuidv4(); 
-      selected: true,
+      selected: false,
       cardData: {
         id: "6",
 
       },
       studentdetails: [
         {
-          title: 'package',
-          value: '2000',
+          title: 'Comapany',
+          value: 'ABC',
         },
         {
-          title: 'location',
+          title: 'Package',
+          value: '6000',
+        },
+        {
+          title: 'Location',
           value: 'chennai'
         }
 
@@ -137,18 +160,22 @@ export class DetailsComponent {
     },
     {
       // studentid: `e_` + uuidv4(); 
-      selected: true,
+      selected: false,
       cardData: {
         id: "7",
 
       },
       studentdetails: [
         {
-          title: 'package',
-          value: '2000',
+          title: 'Comapany',
+          value: 'ABC',
         },
         {
-          title: 'location',
+          title: 'Package',
+          value: '7000',
+        },
+        {
+          title: 'Location',
           value: 'chennai'
         }
 
@@ -157,18 +184,22 @@ export class DetailsComponent {
     },
     {
       // studentid: `e_` + uuidv4(); 
-      selected: true,
+      selected: false,
       cardData: {
         id: "8",
 
       },
       studentdetails: [
         {
-          title: 'package',
-          value: '2000',
+          title: 'Comapany',
+          value: 'ABC',
         },
         {
-          title: 'location',
+          title: 'Package',
+          value: '8000',
+        },
+        {
+          title: 'Location',
           value: 'chennai'
         }
 
@@ -177,19 +208,23 @@ export class DetailsComponent {
     },
     {
       // studentid: `e_` + uuidv4(); 
-      selected: true,
+      selected: false,
       cardData: {
         id: "9",
 
       },
       studentdetails: [
         {
-          title: 'package',
-          value: '2000',
+          title: 'Comapany',
+          value: 'ABC',
         },
         {
-          title: 'location',
-          value: 'chennai'
+          title: 'Package',
+          value: '9000',
+        },
+        {
+          title: 'Location',
+          value: 'T.nagar'
         }
 
 
@@ -197,19 +232,23 @@ export class DetailsComponent {
     },
     {
       // studentid: `e_` + uuidv4(); 
-      selected: true,
+      selected: false,
       cardData: {
         id: "10",
 
       },
       studentdetails: [
         {
-          title: 'package',
-          value: '2000',
+          title: 'Comapany',
+          value: 'xyz',
         },
         {
-          title: 'location',
-          value: 'chennai'
+          title: 'Package',
+          value: '10000',
+        },
+        {
+          title: 'Location',
+          value: 'Ooty'
         }
 
 
@@ -218,435 +257,7 @@ export class DetailsComponent {
 
   ];
 
-  // db of customers
-  // customers = [
-  //   {
-  //     customerId: `e_` + uuidv4(),
-  //     selected: true,
-  //     cardData: {
-  //       Name: 'Harish',
-  //       no: '9790909162',
 
-  //     },
-  //     customerDetails: [
-  //       {
-  //         title: 'Customer name',
-  //         value: 'Harish',
-  //       },
-  //       {
-  //         title: 'Status',
-  //         value: 'Active',
-  //       },
-  //       {
-  //         title: 'Customer ID',
-  //         value: 'X78976TY6546I',
-  //       },
-  //       {
-  //         title: 'Store name',
-  //         value: 'Guduvanchery',
-  //       },
-
-  //     ],
-  //     contact: [
-
-  //       {
-  //         title: 'Phone number',
-  //         value: '9790909162',
-  //       },
-
-
-  //     ],
-  //     address: [
-  //       {
-  //         title: 'Home',
-  //         value: `14/A, East coast street, South west
-  //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.  `,
-  //       },
-  //       {
-  //         title: 'Office',
-  //         value: `14/A, East coast street, South west
-  //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.   `,
-  //       },
-  //     ],
-  //   },
-
-  //   // 2nd customer
-
-  //   {
-  //     customerId: 'X78976TY6546I',
-  //     selected: false,
-  //     cardData: {
-  //       Name: 'Abin',
-  //       no: '9987654321',
-
-  //     },
-  //     customerDetails: [
-  //       {
-  //         title: 'Customer name',
-  //         value: 'Abin',
-  //       },
-  //       {
-  //         title: 'Status',
-  //         value: 'Active',
-  //       },
-  //       {
-  //         title: 'Customer ID',
-  //         value: 'X78976TY6546I',
-  //       },
-  //       {
-  //         title: 'Store name',
-  //         value: 'Guduvanchery',
-  //       },
-
-  //     ],
-  //     contact: [
-
-  //       {
-  //         title: 'Phone number',
-  //         value: '9987654321',
-  //       },
-
-
-  //     ],
-  //     address: [
-  //       {
-  //         title: 'Home',
-  //         value: `14/A, East coast street, South west
-  //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.  `,
-  //       },
-  //       {
-  //         title: 'Office',
-  //         value: `14/A, East coast street, South west
-  //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.   `,
-  //       },
-  //     ],
-  //   },
-
-
-  //   // 3rdcustomer
-
-  //   {
-  //     customerId: 'X78976TY6546I',
-  //     selected: false,
-  //     cardData: {
-  //       Name: 'Arun',
-  //       no: '1234567890',
-
-  //     },
-  //     customerDetails: [
-  //       {
-  //         title: 'Customer name',
-  //         value: 'Arun',
-  //       },
-  //       {
-  //         title: 'Status',
-  //         value: 'Active',
-  //       },
-  //       {
-  //         title: 'Customer ID',
-  //         value: 'X78976TY6546I',
-  //       },
-  //       {
-  //         title: 'Store name',
-  //         value: 'Guduvanchery',
-  //       },
-
-  //     ],
-  //     contact: [
-
-  //       {
-  //         title: 'Phone number',
-  //         value: '1234567890',
-  //       },
-
-
-  //     ],
-  //     address: [
-  //       {
-  //         title: 'Home',
-  //         value: `14/A, East coast street, South west
-  //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.  `,
-  //       },
-  //       {
-  //         title: 'Office',
-  //         value: `14/A, East coast street, South west
-  //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.   `,
-  //       },
-  //     ],
-  //   },
-
-
-  //   // 4th customer
-
-  //   {
-  //     customerId: 'X78976TY6546I',
-  //     selected: false,
-  //     cardData: {
-  //       Name: 'Madan',
-  //       no: '9234567890',
-
-  //     },
-  //     customerDetails: [
-  //       {
-  //         title: 'Customer name',
-  //         value: 'Madan',
-  //       },
-  //       {
-  //         title: 'Status',
-  //         value: 'Active',
-  //       },
-  //       {
-  //         title: 'Customer ID',
-  //         value: 'X78976TY6546I',
-  //       },
-  //       {
-  //         title: 'Store name',
-  //         value: 'Guduvanchery',
-  //       },
-
-  //     ],
-  //     contact: [
-
-  //       {
-  //         title: 'Phone number',
-  //         value: '9234567890',
-  //       },
-
-
-  //     ],
-  //     address: [
-  //       {
-  //         title: 'Home',
-  //         value: `14/A, East coast street, South west
-  //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.  `,
-  //       },
-  //       {
-  //         title: 'Office',
-  //         value: `14/A, East coast street, South west
-  //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.   `,
-  //       },
-  //     ],
-  //   },
-
-  //   {
-  //     customerId: 'X78976TY6546I',
-  //     selected: false,
-  //     cardData: {
-  //       Name: 'Nivetha',
-  //       no: '1234567890',
-
-  //     },
-  //     customerDetails: [
-  //       {
-  //         title: 'Customer name',
-  //         value: 'Nivetha',
-  //       },
-  //       {
-  //         title: 'Status',
-  //         value: 'Active',
-  //       },
-  //       {
-  //         title: 'Customer ID',
-  //         value: 'X78976TY6546I',
-  //       },
-  //       {
-  //         title: 'Store name',
-  //         value: 'Guduvanchery',
-  //       },
-
-  //     ],
-  //     contact: [
-
-  //       {
-  //         title: 'Phone number',
-  //         value: '1234567890',
-  //       },
-
-
-  //     ],
-  //     address: [
-  //       {
-  //         title: 'Home',
-  //         value: `14/A, East coast street, South west
-  //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.  `,
-  //       },
-  //       {
-  //         title: 'Office',
-  //         value: `14/A, East coast street, South west
-  //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.   `,
-  //       },
-  //     ],
-  //   },
-
-
-  //   //     {
-  //   //     customerId: 'X78976TY6546I',
-  //   //      selected: false,
-  //   //     cardData: {
-  //   //       Name: 'Akash',
-  //   //       no: '1234567890',
-
-  //   //     },
-  //   //     customerDetails: [
-  //   //       {
-  //   //         title: 'Customer name',
-  //   //         value: 'Akash',
-  //   //       },
-  //   //       {
-  //   //         title: 'Status',
-  //   //         value: 'Active',
-  //   //       },
-  //   //       {
-  //   //         title: 'Customer ID',
-  //   //         value: 'X78976TY6546I',
-  //   //       },
-  //   //       {
-  //   //         title: 'Store name',
-  //   //         value: 'Guduvanchery',
-  //   //       },
-
-  //   //     ],
-  //   //     contact: [
-
-  //   //       {
-  //   //         title: 'Phone number',
-  //   //         value: '1234567890',
-  //   //       },
-
-
-  //   //     ],
-  //   //     address: [
-  //   //  {
-  //   //         title: 'Home',
-  //   //         value: `14/A, East coast street, South west
-  //   //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //   //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.  `,
-  //   //       },
-  //   //       {
-  //   //         title: 'Office',
-  //   //         value: `14/A, East coast street, South west
-  //   //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //   //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.   `,
-  //   //       },
-  //   //     ],
-  //   //   },
-
-  //   //     {
-  //   //     customerId: 'X78976TY6546I',
-  //   //       selected: false,
-  //   //     cardData: {
-  //   //       Name: 'Tazeen',
-  //   //       no: '1234567890',
-
-  //   //     },
-  //   //     customerDetails: [
-  //   //       {
-  //   //         title: 'Customer name',
-  //   //         value: 'Tazeen',
-  //   //       },
-  //   //       {
-  //   //         title: 'Status',
-  //   //         value: 'Active',
-  //   //       },
-  //   //       {
-  //   //         title: 'Customer ID',
-  //   //         value: 'X78976TY6546I',
-  //   //       },
-  //   //       {
-  //   //         title: 'Store name',
-  //   //         value: 'Guduvanchery',
-  //   //       },
-
-  //   //     ],
-  //   //     contact: [
-
-  //   //       {
-  //   //         title: 'Phone number',
-  //   //         value: '1234567890',
-  //   //       },
-
-
-  //   //     ],
-  //   //     address: [
-  //   //  {
-  //   //         title: 'Home',
-  //   //         value: `14/A, East coast street, South west
-  //   //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //   //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.  `,
-  //   //       },
-  //   //       {
-  //   //         title: 'Office',
-  //   //         value: `14/A, East coast street, South west
-  //   //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //   //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.   `,
-  //   //       },
-  //   //     ],
-  //   //   },
-
-  //   //     {
-  //   //     customerId: 'X78976TY6546I',
-  //   //           selected: false,
-  //   //     cardData: {
-  //   //       Name: 'Sam',
-  //   //       no: '1234567890',
-
-  //   //     },
-  //   //     customerDetails: [
-  //   //       {
-  //   //         title: 'Customer name',
-  //   //         value: 'Sam',
-  //   //       },
-  //   //       {
-  //   //         title: 'Status',
-  //   //         value: 'Active',
-  //   //       },
-  //   //       {
-  //   //         title: 'Customer ID',
-  //   //         value: 'X78976TY6546I',
-  //   //       },
-  //   //       {
-  //   //         title: 'Store name',
-  //   //         value: 'Guduvanchery',
-  //   //       },
-
-  //   //     ],
-  //   //     contact: [
-
-  //   //       {
-  //   //         title: 'Phone number',
-  //   //         value: '1234567890',
-  //   //       },
-
-
-  //   //     ],
-  //   //     address: [
-  //   //  {
-  //   //         title: 'Home',
-  //   //         value: `14/A, East coast street, South west
-  //   //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //   //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.  `,
-  //   //       },
-  //   //       {
-  //   //         title: 'Office',
-  //   //         value: `14/A, East coast street, South west
-  //   //         Kotturpalayamkotai, Vikasvendra kundramma puram,
-  //   //         Tirunelveli. 627422. Opposite: Olala High-class Non-veg Restaurant.   `,
-  //   //       },
-  //   //     ],
-  //   //   },
-
-
-  // ]
 
 
   selectedstudent = this.users[0];
@@ -671,10 +282,17 @@ export class DetailsComponent {
       },
       studentdetail: [
         {
+          title: 'Company',
+          value: data.company,
+        },
+        {
           title: 'Package',
           value: data.package,
         },
-        { title: 'Loaction', value: data.location },
+        {
+          title: 'Loction',
+          value: data.location
+        },
 
       ],
 

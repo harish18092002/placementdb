@@ -32,15 +32,15 @@
                     </div>
 
                     <!-- order details section  -->
-                    <div class="info" (click)="showdetails= !showdetails">
+                    <!-- <div class="info" (click)="showdetails= !showdetails">
                         <img class="dots" src="../../../assets/ellipsis 1.svg" alt="">
                     </div>
 
                     <div class="detailsdiv" *ngIf="showdetails">
                         <p class="view">View order details</p>
                         <p class="unblock">Unblock</p>
-                    </div>
-
+                    </div> -->
+ 
                 </div>
                 <div class="maindetails">
                     <div style="display: flex; justify-content: space-between; padding: 2% 0 "
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <!-- Add new customer section -->
+    <!-- Add new student section -->
     <div class="addnewcustomer">
         <ng-template #addNewForm>
             <div class="black-area">
@@ -74,37 +74,37 @@
 
                     </div>
 
-
+                    <!-- 
                     <div style="display: flex; margin-bottom: 2.3vh">
                         <div class="key">student name</div>
                         <div class="value">
                             <input class="edit-box" type="text" name="name" ngModel />
                         </div>
-                    </div>
+                    </div> -->
 
                     <div style="display: flex; margin-bottom: 2.3vh">
                         <div class="key">ID</div>
                         <div class="value">
-                            <input class="edit-box" type="text" name="storename" ngModel />
+                            <input class="edit-box" type="text" name="id" ngModel />
                         </div>
                     </div>
 
                     <div style="display: flex; margin-bottom: 2.3vh">
                         <div class="key">Company name</div>
                         <div class="value">
-                            <input class="edit-box" type="text " name="number" ngModel />
+                            <input class="edit-box" type="text " name="company" ngModel />
                         </div>
                     </div>
                     <div style="display: flex; margin-bottom: 2.3vh">
                         <div class="key">Package</div>
                         <div class="value">
-                            <input class="edit-box" type="number " name="number" ngModel />
+                            <input class="edit-box" type="number " name="package" ngModel />
                         </div>
                     </div>
                     <div style="display: flex; margin-bottom: 2.3vh">
                         <div class="key">Location</div>
                         <div class="value">
-                            <input class="edit-box" type="text " name="number" ngModel />
+                            <input class="edit-box" type="text " name="location" ngModel />
                         </div>
                     </div>
 
