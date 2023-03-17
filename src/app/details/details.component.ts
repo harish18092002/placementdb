@@ -37,127 +37,6 @@ export class DetailsComponent {
 
       ]
     },
-
-    {
-      // studentid: `e_` + uuidv4(); 
-      selected: false,
-      cardData: {
-        id: "2",
-
-      },
-      studentdetails: [
-        {
-          title: 'Comapany',
-          value: 'ABC',
-        },
-        {
-          title: 'Package',
-          value: '2000',
-        },
-        {
-          title: 'Location',
-          value: 'chennai'
-        }
-
-
-      ]
-    },
-    {
-      // studentid: `e_` + uuidv4(); 
-      selected: false,
-      cardData: {
-        id: "3",
-
-      },
-      studentdetails: [
-        {
-          title: 'Comapany',
-          value: 'ABC',
-        },
-        {
-          title: 'Package',
-          value: '3000',
-        },
-        {
-          title: 'Location',
-          value: 'Chennai'
-        }
-
-
-      ]
-    },
-    {
-      // studentid: `e_` + uuidv4(); 
-      selected: false,
-      cardData: {
-        id: "4",
-
-      },
-      studentdetails: [
-        {
-          title: 'Comapany',
-          value: 'ABC',
-        },
-        {
-          title: 'Package',
-          value: '4000',
-        },
-        {
-          title: 'Location',
-          value: 'chennai'
-        }
-
-
-      ]
-    },
-    {
-      // studentid: `e_` + uuidv4(); 
-      selected: false,
-      cardData: {
-        id: "5",
-
-      },
-      studentdetails: [
-        {
-          title: 'Comapany',
-          value: 'ABC',
-        },
-        {
-          title: 'Package',
-          value: '5000',
-        },
-        {
-          title: 'Location',
-          value: 'chennai'
-        }
-
-
-      ]
-    },
-    {
-      // studentid: `e_` + uuidv4(); 
-      selected: false,
-      cardData: {
-        id: "6",
-
-      },
-      studentdetails: [
-        {
-          title: 'Comapany',
-          value: 'ABC',
-        },
-        {
-          title: 'Package',
-          value: '6000',
-        },
-        {
-          title: 'Location',
-          value: 'chennai'
-        }
-
-
-      ]
-    },
     {
       // studentid: `e_` + uuidv4(); 
       selected: false,
@@ -280,7 +159,7 @@ export class DetailsComponent {
       cardData: {
         id: data.id,
       },
-      studentdetail: [
+      studentdetails: [
         {
           title: 'Company',
           value: data.company,
@@ -301,6 +180,7 @@ export class DetailsComponent {
     console.log('new service framed', data);
     this.selectedstudent = data;
     this.users.push(data);
+
   }
 
   addNewService() {
@@ -312,5 +192,9 @@ export class DetailsComponent {
     this.selectedstudent.selected = true;
     this.addNew = false;
   }
+  // update() {
+  //   const use = JSON.stringify(this.users)
+  //   console.log("This is the updated users" + use)
+  // }
 
 }
