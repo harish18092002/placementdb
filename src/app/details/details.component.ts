@@ -180,7 +180,7 @@ export class DetailsComponent {
     console.log('new service framed', data);
     this.selectedstudent = data;
     this.users.push(data);
-
+    console.log("This is the updated users" + this.users)
   }
 
   addNewService() {

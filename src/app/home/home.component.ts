@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
   constructor(private router: Router) { }
+  data: any = {};
+
   gotodetails() {
     this.router.navigate(['./details']);
+    console.log("This is the radio output", this.data)
   }
+
+
 
   user = [
     {

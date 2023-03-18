@@ -9,16 +9,13 @@
         <br>
         <span class="srn">Students Register Number:-</span>
 
-        <ul class="first"><input type="radio">1</ul>
-        <ul><input type="radio">2</ul>
-        <ul><input type="radio">3</ul>
-        <ul><input type="radio">4</ul>
-        <ul><input type="radio">5</ul>
-        <ul><input type="radio">6</ul>
-        <ul><input type="radio">7</ul>
-        <ul><input type="radio">8</ul>
-        <ul><input type="radio">9</ul>
-        <ul><input type="radio">10</ul>
+        <ul class="first">
+            <input type="checkbox" [(ngModel)]="data.a">1
+        </ul>
+        <ul><input type="checkbox" [(ngModel)]="data.b">2</ul>
+        <ul><input type="checkbox" [(ngModel)]="data.c">3</ul>
+        <ul><input type="checkbox" [(ngModel)]="data.d">4</ul>
+        <ul><input type="checkbox" [(ngModel)]="data.e">5</ul>
         <div class="button">
             <button id="submit" (click)="  gotodetails()">Next</button>
         </div>
