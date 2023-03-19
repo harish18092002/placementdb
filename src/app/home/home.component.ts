@@ -9,7 +9,7 @@ import { datastr } from './interface';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+   selectedids:any;
   constructor(private router: Router) { }
   // data: any = {};
   idlist: datastr[] = [
@@ -39,11 +39,14 @@ export class HomeComponent {
     //   alert(num * 10);
     // }
 
-    const selectedids = this.idlist
+    this.selectedids = this.idlist
       .filter(obj => obj.isselected) // filter objects where isSelected is true
-      .map(obj => obj.name);
+      .map(obj => obj.id);
 
-    console.log(selectedids);
+    console.log(this.selectedids);
+
+    this.router.navigate(['/details'], { queryParams: { id: this.selectedids.join(',') } });
+  
   }
   }
   // ngOnInit() {

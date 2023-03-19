@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { v4 as uuidv4 } from 'uuid';
+import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 
 @Component({
@@ -9,7 +11,20 @@ import { v4 as uuidv4 } from 'uuid';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
+  selectedids: string[];
+  filteredid!: any;
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    // this is for the imported data from home 
+    this.selectedids = this.route.snapshot.queryParamMap.get('id')?.split(',') ?? [];
+
+    console.log("This is the id came from home component", this.selectedids)
+    this.filteredid = this.users.filter(obj => this.selectedids.includes(obj.cardData.id));
+
+    console.log("This is the id came from home component", this.filteredid)
+  };
   addNew = false;
+
 
 
   // this the db for students
@@ -41,7 +56,7 @@ export class DetailsComponent {
       // studentid: `e_` + uuidv4(); 
       selected: false,
       cardData: {
-        id: "7",
+        id: "2",
 
       },
       studentdetails: [
@@ -65,7 +80,7 @@ export class DetailsComponent {
       // studentid: `e_` + uuidv4(); 
       selected: false,
       cardData: {
-        id: "8",
+        id: "3",
 
       },
       studentdetails: [
@@ -89,7 +104,7 @@ export class DetailsComponent {
       // studentid: `e_` + uuidv4(); 
       selected: false,
       cardData: {
-        id: "9",
+        id: "4",
 
       },
       studentdetails: [
@@ -113,7 +128,7 @@ export class DetailsComponent {
       // studentid: `e_` + uuidv4(); 
       selected: false,
       cardData: {
-        id: "10",
+        id: "5",
 
       },
       studentdetails: [
@@ -139,7 +154,7 @@ export class DetailsComponent {
 
 
 
-  selectedstudent = this.users[0];
+  selectedstudent = this.filteredid;
   showdetails = false;
   showListElements = false;
   setSelectedstudent(user: any) {
@@ -155,7 +170,7 @@ export class DetailsComponent {
     this.addNew = false;
     data = {
 
-      selected: true,
+      selected: false,
       cardData: {
         id: data.id,
       },
@@ -179,7 +194,7 @@ export class DetailsComponent {
 
     console.log('new service framed', data);
     this.selectedstudent = data;
-    this.users.push(data);
+    this.filteredid.push(data);
     console.log("This is the updated users" + this.users)
   }
 

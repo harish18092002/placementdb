@@ -4,7 +4,7 @@
 
     <div class="main">
         <div class="card-list">
-            <div *ngFor="let item of users ; let i = index" class="card-container">
+            <div *ngFor="let item of filteredid ; let i = index" class="card-container">
                 <mat-card class="card" [ngClass]="{ selected: item.selected }" (click)="setSelectedstudent(item)">
                     <mat-card-title>Student:{{ item.cardData.id }} </mat-card-title>
                     <mat-card-content class="card-content">
@@ -14,7 +14,7 @@
 
                     </mat-card-content>
                 </mat-card>
-                <mat-card id="new-customer" *ngIf="i === users.length - 1" (click)="addNewService()">
+                <mat-card id="new-customer" *ngIf="i === filteredid.length - 1" (click)="addNewService()">
                     <mat-card-title id="new-customer-label">Add Student +</mat-card-title>
                 </mat-card>
             </div><!--*ngIf=" i === customers.length - 1" (click)="addNewService()" -->
