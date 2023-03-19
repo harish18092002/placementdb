@@ -8,19 +8,21 @@
         <span class="login">Students ID List</span>
         <br>
         <span class="srn">Students Register Number:-</span>
+        <div>
 
-        <ul class="first">
-            <input type="checkbox" [(ngModel)]="data.a">1
-        </ul>
-        <ul><input type="checkbox" [(ngModel)]="data.b">2</ul>
-        <ul><input type="checkbox" [(ngModel)]="data.c">3</ul>
-        <ul><input type="checkbox" [(ngModel)]="data.d">4</ul>
-        <ul><input type="checkbox" [(ngModel)]="data.e">5</ul>
-        <div class="button">
-            <button id="submit" (click)="  gotodetails()">Next</button>
+            <div *ngFor="let list of idlist">
+                <ul class="first">
+                    <input type="checkbox" name="{{list.id}}" [(ngModel)]="list.isselected">
+                </ul>
+                <div><label>{{list.id}}</label></div>
+            </div>
+
+            <div class="button">
+                <button id="submit" (click)="  gotodetails()">Next</button>
+            </div>
+
+
         </div>
-
-
     </div>
 
 </body>
