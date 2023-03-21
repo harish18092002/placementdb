@@ -3,7 +3,9 @@ import { Title } from '@angular/platform-browser';
 import { v4 as uuidv4 } from 'uuid';
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
+// import { alldetails } from './service';
 
 @Component({
   selector: 'app-details',
@@ -13,15 +15,20 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class DetailsComponent {
   selectedids: string[];
   filteredid!: any;
+  data: any;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, private afs: AngularFirestore) {
+
+
+
     // this is for the imported data from home 
+
     this.selectedids = this.route.snapshot.queryParamMap.get('id')?.split(',') ?? [];
 
     console.log("This is the id came from home component", this.selectedids)
     this.filteredid = this.users.filter(obj => this.selectedids.includes(obj.cardData.id));
 
-    console.log("This is the id came from home component", this.filteredid)
+    console.log("This is the filtered id in details component", this.filteredid)
   };
   addNew = false;
 
@@ -196,6 +203,12 @@ export class DetailsComponent {
     this.selectedstudent = data;
     this.filteredid.push(data);
     console.log("This is the updated users" + this.users)
+
+
+    this.afs.collection('newstudents').add(data);
+
+    console.log("Thse are the new students added to db", data)
+
   }
 
   addNewService() {
@@ -207,9 +220,48 @@ export class DetailsComponent {
     this.selectedstudent.selected = true;
     this.addNew = false;
   }
-  // update() {
-  //   const use = JSON.stringify(this.users)
-  //   console.log("This is the updated users" + use)
+  create() {
+
+
+
+  }
+
+  // below code is for the get data functions 
+
+  // async get() {
+  //   // this.afs
+  //   //   .collection("users")
+
+  //   //   .doc(this.data)
+  //   //   .get();
+
+  //   const citiesRef = this.afs.collection('cities');
+  //   const snapshot = await citiesRef.get();
+  //   snapshot.forEach(doc => {
+  //     console.log('=>', doc);
+  //   });
+
+  //   //  const stores$ = this.afs
+  //   //             .collection<IStore>('stores')
+  //   //             .doc(booking.storeId)
+  //   //             .get();
+  //   //           booking.store = await (await lastValueFrom(stores$)).data();
+
+  //   console.log("This is the data from firestore", this.data)
+
+  // }
+
+  // retrieveTutorials(): void {
+  //   this.afs.getAll().snapshotChanges().pipe(
+  //     map(changes =>
+  //       changes.map(c =>
+  //         ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+  //       )
+  //     )
+  //   ).subscribe(data => {
+  //     this.tutorials = data;
+  //   });
   // }
 
 }
+

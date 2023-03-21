@@ -9,8 +9,19 @@
 
 }
 
+.detailsmain {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3vh;
+    margin-left: 20vh
+}
+
+.label {
+    /* margin-left: 18vh; */
+}
+
 .parent {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     position: absolute;
     width: 870px;
     height: 530px;
@@ -55,9 +66,7 @@ ul {
     margin-left: 15vh;
 }
 
-.first {
-    margin-top: 3vh;
-}
+.first {}
 
 #submit {
 

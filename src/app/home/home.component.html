@@ -10,11 +10,11 @@
         <span class="srn">Students Register Number:-</span>
         <div>
 
-            <div *ngFor="let list of idlist">
+            <div *ngFor="let list of idlist" class="detailsmain">
                 <ul class="first">
                     <input type="checkbox" name="{{list.id}}" [(ngModel)]="list.isselected">
                 </ul>
-                <div><label>{{list.id}}</label></div>
+                <div class="label"><label>{{list.id}}</label></div>
             </div>
 
             <div class="button">

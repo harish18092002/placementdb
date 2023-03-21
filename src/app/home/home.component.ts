@@ -9,7 +9,7 @@ import { datastr } from './interface';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-   selectedids:any;
+  selectedids: any;
   constructor(private router: Router) { }
   // data: any = {};
   idlist: datastr[] = [
@@ -21,176 +21,21 @@ export class HomeComponent {
 
   ]
   gotodetails() {
-    this.router.navigate(['./details']);
-    // const filterid = JSON.stringify(this.idlist)
-    // console.log("This is the radio output", filterid)
-
-
-    // // if (filterid.isselected = true) {
-    // //   console.log("The is is correct")
-    // // }
-    // // else {
-    // //   console.log("this is wrong")
-    // // }
-    // const numbers = [65, 44, 12, 4];
-    // const newArr = numbers.map(myFunction)
-
-    // function myFunction(num: any) {
-    //   alert(num * 10);
-    // }
-
+    // this.router.navigate(['./details']);
     this.selectedids = this.idlist
       .filter(obj => obj.isselected) // filter objects where isSelected is true
       .map(obj => obj.id);
+    this.router.navigate(['/details'], { queryParams: { id: this.selectedids.join(',') } });
 
     console.log(this.selectedids);
+    // if (this.selectedids! == null) {
+    // }
+    // else {
+    //   alert("Please select the register numbers to navigate to next page")
+    // }
 
-    this.router.navigate(['/details'], { queryParams: { id: this.selectedids.join(',') } });
-  
+
   }
-  }
-  // ngOnInit() {
-  //   // this.getid();
-
-
-  // }
-
-
-
-
-
-//   routid() {
-    
-//   // user = [
-//   //   {
-//   //     // studentid: `e_` + uuidv4(); 
-//   //     selected: true,
-//   //     cardData: {
-//   //       id: "1",
-
-//   //     },
-//   //     studentdetails: {
-//   //       package: "2000",
-//   //       location: "chennai"
-//   //     }
-//   //   },
-
-//   //   {
-//   //     // studentid: `e_` + uuidv4(); 
-//   //     selected: true,
-//   //     cardData: {
-//   //       id: "2",
-
-//   //     },
-//   //     studentdetails: {
-//   //       package: "2000",
-//   //       location: "chennai"
-//   //     }
-//   //   },
-//   //   {
-//   //     // studentid: `e_` + uuidv4(); 
-//   //     selected: true,
-//   //     cardData: {
-//   //       id: "3",
-
-//   //     },
-//   //     studentdetails: {
-//   //       package: "2000",
-//   //       location: "chennai"
-//   //     }
-//   //   },
-//   //   {
-//   //     // studentid: `e_` + uuidv4(); 
-//   //     selected: true,
-//   //     cardData: {
-//   //       id: "4",
-
-//   //     },
-//   //     studentdetails: {
-//   //       package: "2000",
-//   //       location: "chennai"
-//   //     }
-//   //   },
-//   //   {
-//   //     // studentid: `e_` + uuidv4(); 
-//   //     selected: true,
-//   //     cardData: {
-//   //       id: "5",
-
-//   //     },
-//   //     studentdetails: {
-//   //       package: "2000",
-//   //       location: "chennai"
-//   //     }
-//   //   },
-//   //   {
-//   //     // studentid: `e_` + uuidv4(); 
-//   //     selected: true,
-//   //     cardData: {
-//   //       id: "6",
-
-//   //     },
-//   //     studentdetails: {
-//   //       package: "2000",
-//   //       location: "chennai"
-//   //     }
-//   //   },
-//   //   {
-//   //     // studentid: `e_` + uuidv4(); 
-//   //     selected: true,
-//   //     cardData: {
-//   //       id: "7",
-
-//   //     },
-//   //     studentdetails: {
-//   //       package: "2000",
-//   //       location: "chennai"
-//   //     }
-//   //   },
-//   //   {
-//   //     // studentid: `e_` + uuidv4(); 
-//   //     selected: true,
-//   //     cardData: {
-//   //       id: "8",
-
-//   //     },
-//   //     studentdetails: {
-//   //       package: "2000",
-//   //       location: "chennai"
-//   //     }
-//   //   },
-//   //   {
-//   //     // studentid: `e_` + uuidv4(); 
-//   //     selected: true,
-//   //     cardData: {
-//   //       id: "9",
-
-//   //     },
-//   //     studentdetails: {
-//   //       package: "2000",
-//   //       location: "chennai"
-//   //     }
-//   //   },
-//   //   {
-//   //     // studentid: `e_` + uuidv4(); 
-//   //     selected: true,
-//   //     cardData: {
-//   //       id: "10",
-
-//   //     },
-//   //     studentdetails: {
-//   //       package: "2000",
-//   //       location: "chennai"
-//   //     }
-//   //   },
-
-//   // ];
-
-// }
-// class id {
-//   id!: number;
-//   name!: string;
-//   isselected!: boolean;
-// }
+}
 
 

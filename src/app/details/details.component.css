@@ -1,18 +1,10 @@
-.main {
+.main1 {
     background: rgb(238, 174, 202);
     background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
 
 }
 
-.outerbox {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-}
 
-.nav-bar {
-    display: contents;
-}
 
 .main-container {
     display: flex;
@@ -103,6 +95,7 @@
         -3px -3px 5px 0px rgba(0.2, 0, 0, 0.2);
     border-radius: 4px;
     background-color: rgba(33, 36, 39, 0.95);
+    overflow: hidden;
 }
 
 #add-new-label {
@@ -116,7 +109,7 @@
     justify-content: center;
 }
 
-#new-customer {
+#new-student {
     margin-top: 2vh;
     cursor: pointer;
     height: 5.5vh;
@@ -127,7 +120,7 @@
     background-color: rgba(33, 36, 39, 0.95);
 }
 
-#new-customer-label {
+#new-student-label {
     margin-top: 1px;
     font-weight: 400;
     font-size: medium;
@@ -139,8 +132,10 @@
 }
 
 .main {
+    position: relative;
     height: 100%;
     display: flex;
+    left: 30vh;
 }
 
 .card-list {
@@ -161,7 +156,7 @@
     */
     padding-left: 1vw;
     padding-top: 0.8vh;
-    box-shadow: 3px 3px 5px 0px rgba(0.2, 0, 0, 0.2),
+    box-shadow: 7px rgba(0.2, 0, 0, 0.2),
         -3px -3px 5px 0px rgba(0.2, 0, 0, 0.2);
     background-color: #f5f4ee;
     cursor: pointer;
@@ -190,17 +185,19 @@ Details:
     display: flex;
 }
 
-.booking-details {
+.student-details {
     width: 36vw;
-    height: 75.5vh;
+    height: 40.5vh;
     background-color: #212427;
-    border-radius: 5px 0 0 5px;
+    border-radius: 8px;
     padding: 3vh;
     overflow: scroll;
+    overflow: hidden;
 }
 
 .key {
     padding-left: 20px;
+    height: 50%;
     width: 50%;
     text-align: left;
     color: rgba(255, 255, 255, 0.65);
@@ -208,23 +205,13 @@ Details:
 
 .value {
     width: 50%;
+    height: 50%;
     text-align: left;
     color: white;
 }
 
-/* Service details */
 
-.phone {
-    height: 18px;
-}
 
-.loc {
-    height: 18px;
-}
-
-.number {
-    padding-left: 10px;
-}
 
 @media screen and (max-width: 1370px) {
     .card-list::-webkit-scrollbar {
@@ -278,7 +265,7 @@ Details:
     }
 }
 
-.customerheader {
+.studentheader {
     display: flex;
     flex-wrap: wrap;
     z-index: 10;
@@ -317,15 +304,7 @@ Details:
     padding-top: 0.5vh;
 }
 
-.unblock {
-    color: red;
-    width: 12vh;
-    background-color: white;
-    margin: 14px 10px 10px 35px;
-    padding-left: 2.5vh;
-    border-radius: 7px;
-    cursor: pointer;
-}
+
 
 .maindetails {
     z-index: 5;
@@ -336,15 +315,15 @@ Details:
 
 .black-area {
     width: 36vw;
-    height: 75.5vh;
+    height: 60vh;
     background-color: #212427;
-    border-radius: 5px 0 0 5px;
+    border-radius: 7px;
     padding: 3vh 3vh 3vh 5vh;
     overflow: hidden;
-    overflow-y: scroll;
+
 }
 
-.addnewcustomer {
+.addnewstudent {
     flex-grow: 1;
     padding: 5.1vh 2.5vh 0vh 15vh;
     display: flex;
@@ -374,6 +353,7 @@ Details:
 }
 
 .cancel-icon {
+
     color: white;
     cursor: pointer;
 }
@@ -384,7 +364,7 @@ Details:
     padding-left: 50px;
     margin-left: -5vw;
     width: 15vw;
-    height: 5vh;
+    height: 2.5vh;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.17);

@@ -1,4 +1,4 @@
-<body class="main">
+<body class="main1">
     <app-navbar></app-navbar>
     <!-- customer details -->
 
@@ -14,39 +14,31 @@
 
                     </mat-card-content>
                 </mat-card>
-                <mat-card id="new-customer" *ngIf="i === filteredid.length - 1" (click)="addNewService()">
-                    <mat-card-title id="new-customer-label">Add Student +</mat-card-title>
+                <mat-card id="new-student" *ngIf="i === filteredid.length - 1" (click)="addNewService()">
+                    <mat-card-title id="new-student-label">Add Student +</mat-card-title>
                 </mat-card>
             </div><!--*ngIf=" i === customers.length - 1" (click)="addNewService()" -->
 
         </div>
 
         <div class="details">
-            <div class="booking-details" *ngIf="!addNew; else addNewForm">
+            <div class="student-details" *ngIf="!addNew; else addNewForm">
 
 
-                <!--CUSTOMER DETAILS -->
-                <div class="customerheader">
+                <!--Student Details -->
+                <div class="studentheader">
                     <div style="height: 35%">
                         <h4 style="color: white">STUDENT DETAILS</h4>
                     </div>
 
-                    <!-- order details section  -->
-                    <!-- <div class="info" (click)="showdetails= !showdetails">
-                        <img class="dots" src="../../../assets/ellipsis 1.svg" alt="">
-                    </div>
-
-                    <div class="detailsdiv" *ngIf="showdetails">
-                        <p class="view">View order details</p>
-                        <p class="unblock">Unblock</p>
-                    </div> -->
-
                 </div>
                 <div class="maindetails">
                     <div style="display: flex; justify-content: space-between; padding: 2% 0 "
-                        *ngFor="let studentDetails of selectedstudent.studentdetails">
-                        <div class="key">{{studentDetails.title }}</div>
-                        <div class="value">{{ studentDetails.value }}</div>
+                        *ngFor="let details of selectedstudent.studentdetails">
+
+
+                        <div class="key">{{details.title }}</div>
+                        <div class="value">{{ details.value }}</div>
                     </div>
                 </div>
             </div>
@@ -54,7 +46,7 @@
     </div>
 
     <!-- Add new student section -->
-    <div class="addnewcustomer">
+    <div class="addnewstudent">
         <ng-template #addNewForm>
             <div class="black-area">
                 <form style="
@@ -68,19 +60,11 @@
                         <div style="height: 35%">
                             <h4 style="color: white">STUDENT DETAILS</h4>
                         </div>
-                        <div style="text-align: right ; margin-left: 35.5vh;">
+                        <div style="text-align: right ; margin-left: 40vh;">
                             <mat-icon class="cancel-icon" (click)="cancelAddForm()">clear</mat-icon>
                         </div>
 
                     </div>
-
-                    <!-- 
-                    <div style="display: flex; margin-bottom: 2.3vh">
-                        <div class="key">student name</div>
-                        <div class="value">
-                            <input class="edit-box" type="text" name="name" ngModel />
-                        </div>
-                    </div> -->
 
                     <div style="display: flex; margin-bottom: 2.3vh">
                         <div class="key">ID</div>
@@ -116,5 +100,6 @@
         </ng-template>
 
     </div>
-
+    <!-- <button (click)="create()">create</button> -->
+    <!-- <button (click)="get()">get</button> -->
 </body>

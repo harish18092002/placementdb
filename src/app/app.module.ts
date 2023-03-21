@@ -18,6 +18,25 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// imports for firebase
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
+
+// firebase config files
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyBdm-qpmJ1T2zoshYD0wimyDtHfuULBhOw",
+  authDomain: "placementdb-11901.firebaseapp.com",
+  projectId: "placementdb-11901",
+  storageBucket: "placementdb-11901.appspot.com",
+  messagingSenderId: "1021645127901",
+  appId: "1:1021645127901:web:099fce51abed1006161b34"
+
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +59,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatTableModule,
 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
