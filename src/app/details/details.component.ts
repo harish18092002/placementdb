@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { v4 as uuidv4 } from 'uuid';
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
+import { ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
 // import { alldetails } from './service';
 
 @Component({
@@ -13,11 +14,21 @@ import { Observable } from 'rxjs';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
+  showDetails: boolean = false;
+  // template comes here
+  @Input() field1!: string;
+  @Input() field2!: string;
+
+
   selectedids: string[];
   filteredid!: any;
   data: any;
 
-  constructor(private router: Router, private route: ActivatedRoute, private afs: AngularFirestore) {
+  // firebase data
+  getdata!: Observable<any[]>;
+  storedata: any;
+
+  constructor(private router: Router, private route: ActivatedRoute, private afs: AngularFirestore, private resolver: ComponentFactoryResolver, private container: ViewContainerRef) {
 
 
 
@@ -32,7 +43,11 @@ export class DetailsComponent {
   };
   addNew = false;
 
-
+  addDetails() {
+    const factory = this.resolver.resolveComponentFactory(DetailsComponent);
+    const componentRef = this.container.createComponent(factory);
+    componentRef.location.nativeElement.classList.add('navdetails');
+  }
 
   // this the db for students
   users = [
@@ -157,10 +172,7 @@ export class DetailsComponent {
     },
 
   ];
-
-
-
-
+  
   selectedstudent = this.filteredid;
   showdetails = false;
   showListElements = false;
@@ -226,42 +238,16 @@ export class DetailsComponent {
 
   }
 
-  // below code is for the get data functions 
+  getUsers() {
+    this.getdata = this.afs.collection('users').valueChanges();
+    this.getdata.subscribe(data => {
+      this.storedata = data;
+      console.log((this.storedata))
+      console.log("This is the get data from users", this.storedata)
+    });
 
-  // async get() {
-  //   // this.afs
-  //   //   .collection("users")
 
-  //   //   .doc(this.data)
-  //   //   .get();
 
-  //   const citiesRef = this.afs.collection('cities');
-  //   const snapshot = await citiesRef.get();
-  //   snapshot.forEach(doc => {
-  //     console.log('=>', doc);
-  //   });
-
-  //   //  const stores$ = this.afs
-  //   //             .collection<IStore>('stores')
-  //   //             .doc(booking.storeId)
-  //   //             .get();
-  //   //           booking.store = await (await lastValueFrom(stores$)).data();
-
-  //   console.log("This is the data from firestore", this.data)
-
-  // }
-
-  // retrieveTutorials(): void {
-  //   this.afs.getAll().snapshotChanges().pipe(
-  //     map(changes =>
-  //       changes.map(c =>
-  //         ({ id: c.payload.doc.id, ...c.payload.doc.data() })
-  //       )
-  //     )
-  //   ).subscribe(data => {
-  //     this.tutorials = data;
-  //   });
-  // }
-
+  }
 }
-
+// (data.push(this.getdata))

@@ -1,0 +1,58 @@
+  .blackarea {
+      width: 36vw;
+      height: 40.5vh;
+      background-color: #212427;
+      border-radius: 8px;
+      padding: 3vh;
+      overflow: scroll;
+      overflow: hidden;
+      margin-left: 60vh;
+
+
+  }
+
+  .contents {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #field1 {
+      height: 3vh;
+      width: 30vh;
+  }
+
+  #field2 {
+      height: 3vh;
+      width: 30vh;
+  }
+
+  #field3 {
+      height: 3vh;
+      width: 30vh;
+  }
+
+  label {
+      color: aliceblue;
+
+  }
+
+  .submit {
+      box-sizing: border-box;
+      width: 100px;
+      height: 40px;
+      background: rgba(215, 239, 125, 0.9);
+      border: 0.65px solid #a2b84e;
+      border-radius: 3px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 11px;
+      /* identical to box height */
+      color: #212427;
+      align-self: center;
+      margin-top: 2vh;
+      margin-left: 30vh;
+  }

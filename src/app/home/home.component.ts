@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { datastr } from './interface';
@@ -9,6 +9,9 @@ import { datastr } from './interface';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  @Input() field1 !: string;
+  @Input() field2!: string;
+
   selectedids: any;
   constructor(private router: Router) { }
   // data: any = {};
@@ -36,6 +39,7 @@ export class HomeComponent {
 
 
   }
+
 }
 
 

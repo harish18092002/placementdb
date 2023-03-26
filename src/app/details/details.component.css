@@ -1,7 +1,7 @@
 .main1 {
     background: rgb(238, 174, 202);
     background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-
+    overflow: scroll;
 }
 
 
@@ -393,4 +393,17 @@ Details:
 .main {
     display: flex;
     flex-wrap: wrap;
+}
+
+.studentsname {
+    font-size: large;
+    margin-left: 30vh;
+    margin-top: 10vh;
+    padding-top: 10vh;
+    font-style: italic;
+
+}
+
+.name {
+    margin-top: 10vh;
 }

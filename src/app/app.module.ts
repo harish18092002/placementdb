@@ -21,6 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // imports for firebase
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { NavdetailsComponent } from './templates/navdetails.component';
+import { TemplateComponent } from './template/template.component';
 
 
 // firebase config files
@@ -42,7 +44,9 @@ const firebaseConfig = {
     AppComponent,
     HomeComponent,
     DetailsComponent,
-    NavbarComponent
+    NavbarComponent,
+    NavdetailsComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,

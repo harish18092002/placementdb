@@ -15,4 +15,7 @@ export class NavbarComponent {
   goTodetails() {
     this.router.navigate(['./details']);
   }
+  goTotemplate() {
+    this.router.navigate(['./template']);
+  }
 }

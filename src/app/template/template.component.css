@@ -1,0 +1,27 @@
+  .main {
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  }
+
+  .import {}
+
+  .blackarea {
+    width: 36vw;
+    height: 40.5vh;
+    background-color: #212427;
+    border-radius: 8px;
+    padding: 3vh;
+    overflow: scroll;
+    overflow: hidden;
+    margin-left: 60vh;
+
+  }
+
+  .sentence {
+    font-size: large;
+    margin-left: 30vh;
+    margin-top: 10vh;
+    padding-top: 10vh;
+    font-style: italic;
+    margin-bottom: 10vh;
+  }
